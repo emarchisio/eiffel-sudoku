@@ -47,7 +47,13 @@ feature -- Status setting
 
 	set_value (new_value: INTEGER)
 		-- sets the cell with new_value
+	require
+		new_value > 0 and new_value < 10
 	do
+		
+	ensure
+		value_modified: value = new_value
+		value_setted: is_set = true
 
 	end
 
